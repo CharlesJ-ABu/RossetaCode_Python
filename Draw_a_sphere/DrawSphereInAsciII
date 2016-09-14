@@ -1,0 +1,22 @@
+import math
+import pprint
+
+def draw_sphere(r):
+	sphere = ''
+	for i in range(int(math.floor(-r)), int(math.ceil(r)+1)):
+		x = i+0.5
+		for j in range(int(math.floor(-3*r)), int(math.ceil(3*r)+1)):
+			y = j/3+0.5
+			if x**2+y**2 < r**2:
+				if y == int(math.ceil(3*r))/3 +0.5:
+					sphere += '@\n'
+				else:
+					sphere += '@'
+			else:
+				if y == int(math.ceil(3*r))/3 +0.5:
+					sphere += ' \n'
+				else:
+					sphere += ' '
+	print sphere
+
+draw_sphere(20)
